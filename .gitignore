@@ -11,6 +11,8 @@ _SpecRunner.html
 *.eot
 public/
 
+.env
+
 # Created by https://www.gitignore.io/api/osx,linux
 
 ### OSX ###
