@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://secure-chamber-31638.herokuapp.com',
+    production: 'https://immense-savannah-73661.herokuapp.com/',
     development: 'http://localhost:4741'
   }
 }
