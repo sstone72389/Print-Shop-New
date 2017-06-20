@@ -6,6 +6,60 @@ body {
   font-size: 16px;
 }
 
+nav {
+  // display: inline block
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 58px;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+  background-color: #ffefd1;
+  border-bottom: 2px solid #4c4339;
+}
+
+.btn-transparent {
+  background: transparent;
+  color: #524c42;
+  font-weight: 600;
+  -webkit-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+  -o-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+  -webkit-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.btn-transparent:focus {
+  background: transparent;
+  outline: none;
+  color: #524c42;
+}
+
+.btn-transparent:hover {
+  background: transparent;
+  color: #272b47;
+}
+
+.btn-transparent:active {
+  outline: none;
+}
+
+input {
+  font-size: 16px;
+}
+
+.zoom-control {
+  font-size: 16px;
+}
+
+.modal-body,
+.modal-content,
+.modal-footer,
+.modal-header {
+  border: 0;
+}
+
 header {
   position: relative;
   height: 40vh;
@@ -29,28 +83,6 @@ h1 {
   font-size: 4rem;
 }
 
-.sign-in-area,
-.sign-out-area {
-  position: absolute;
-  float: right;
-  font-size: 14px;
-  top: 25px;
-  right: 0;
-}
-
-.sign-in-area {
-  width: 210px;
-}
-
-.sign-out-area {
-  width: 300px;
-  text-align: right;
-  padding-right: 10px;
-}
-
-.sign-out-area > fieldset {
-  position: relative;
-}
 
 input {
   font-size: 16px;
@@ -157,7 +189,7 @@ p,
   margin-bottom: .5rem;
 }
 
-.hideBeforeLogin {
+.hideOnStart {
   display: none;
 }
 

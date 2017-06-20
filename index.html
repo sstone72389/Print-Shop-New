@@ -18,51 +18,20 @@
 </head>
 
 <body>
+    <nav>
+
+    <button type="button" class="btn btn-transparent btn-lg hideOnSignIn" data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
+    <button type="button" class="btn btn-transparent btn-lg hideOnStart" data-dismiss="modal" data-toggle="modal" data-target="#signOutModal">Sign out</button>
+    <button type="button" class="btn btn-transparent btn-lg hideOnSignIn" data-dismiss="modal" data-toggle="modal" data-target="#signInModal">Sign in</button>
+    <button type="button" class="btn btn-transparent btn-lg hideOnStart" data-dismiss="modal" data-toggle="modal" data-target="#changePasswordModal">Settings</button>
+
+    </nav>
+
   <header>
     <h1>P R I N T S</h1>
+
     <img class="paintbrush" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/paintbrush.png" />
     <img class="palette" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/palette.png" />
-
-    <div class="sign-in-area hideAfterLogin">
-      <button id="register">register</button>
-      <button id="log-in">log in</button>
-
-      <form id="sign-up" class="hidden">
-        <fieldset>
-          <input type="text" name="credentials[email]" placeholder="email">
-          <input type="password" name="credentials[password]" placeholder="password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
-          <button class="reset" type="submit" name="submit" value="sign up">sign up</button>
-        </fieldset>
-      </form>
-
-      <!-- <div class="sign-up-error-message"></div> -->
-      <form id="sign-in" class="hidden">
-        <fieldset>
-          <input type="text" name="credentials[email]" placeholder="email">
-          <input type="password" name="credentials[password]" placeholder="password">
-          <button class="reset" type="submit" name="submit" value="sign in">sign in</button>
-        </fieldset>
-      </form>
-
-      <!-- <div class="signInErrorMessage"></div> -->
-    </div>
-
-    <div class="sign-out-area hideBeforeLogin showAfterLogin">
-      <button id="change-pwd" class="change-pwd-button">change password</button>
-      <button type="submit" name="submit" value="sign out" class="sign-out-button" id="sign-out">sign out</button>
-
-      <form id="change-password" class="hidden">
-        <fieldset>
-          <input type="password" name="passwords[old]" placeholder="old password">
-          <input type="password" name="passwords[new]" placeholder="new password">
-          <button type="submit" name="submit" value="change password">change password</button>
-        </fieldset>
-      </form>
-
-      <!-- <div class="change-pwd-success"></div>
-      <div class="change-pwd-error"></div> -->
-    </div>
 
     <h2 class="text-display">Welcome. Sign in to get started!</h2>
 
@@ -72,6 +41,119 @@
     <button class="cart-button" type="submit" name="submit" value="submit">Check out</button>
     <div class="cart-display"></div>
   </div> -->
+
+  <div id="signUpModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Don't forget to sign up!</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-up">
+            <fieldset>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="credentials[email]" type="text" placeholder="create account">
+              </div>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="credentials[password]" type="password" placeholder="password">
+              </div>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+              </div>
+              <button class="btn btn-primary" type="submit" name="submit">Sign Up!</button>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Sign in Modal -->
+  <div id="signInModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Don't forget to sign in!</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-in">
+            <fieldset>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="credentials[email]" type="text" placeholder="your username">
+              </div>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="credentials[password]" type="password" placeholder="password">
+              </div>
+              <button class="btn btn-primary" type="submit" name="submit">Sign In!</button>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Out Modal -->
+  <div id="signOutModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Are you sure want to sign out?</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-out">
+            <fieldset>
+              <button class="btn btn-primary" type="submit" name="submit">Sign Out!</button>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Change Passwrord Modal -->
+  <div id="changePasswordModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Change Password Here!</h4>
+        </div>
+        <div class="modal-body">
+          <form id="change-password">
+            <fieldset>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="passwords[old]" type="password" placeholder="old password">
+              </div>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="passwords[new]" type="password" placeholder=" new password">
+              </div>
+              <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="alreadyPurchased hideBeforeLogin showAfterLogin">
     <button class="purcashed-button" type="submit" name="submit" value="submit">See Purchase History</button>
