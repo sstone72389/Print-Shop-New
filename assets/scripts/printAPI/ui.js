@@ -8,13 +8,13 @@ const getFormFields = require('../../../lib/get-form-fields')
 const indexPrintsSuccess = (response) => {
   store.indexOfPrints = response
   if (response.prints.length === 0) {
-    $('.cartHas-display').html("Don't forget to add some prints!")
+    $('.orders').html("Don't forget to add some prints!")
     calculateTotalCost()
   } else {
     const indexPrintsHtml = showPrintsTemplate({
       prints: response.prints
     })
-    $('.cartHas-display').html(indexPrintsHtml)
+    $('.orders').html(indexPrintsHtml)
     $('.remove-print-button').on('click', removePrint)
     $('.update-print-button').on('submit', updatePrint)
     calculateTotalCost()

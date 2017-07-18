@@ -18,12 +18,28 @@
 </head>
 
 <body>
+
     <nav>
 
-    <button type="button" class="btn btn-transparent btn-lg hideOnSignIn" data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
-    <button type="button" class="btn btn-transparent btn-lg hideOnStart" data-dismiss="modal" data-toggle="modal" data-target="#signOutModal">Sign out</button>
-    <button type="button" class="btn btn-transparent btn-lg hideOnSignIn" data-dismiss="modal" data-toggle="modal" data-target="#signInModal">Sign in</button>
-    <button type="button" class="btn btn-transparent btn-lg hideOnStart" data-dismiss="modal" data-toggle="modal" data-target="#changePasswordModal">Settings</button>
+    <button type="button" class="btn btn-transparent btn-lg hideOnSignIn left" data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
+    <button type="button" class="btn btn-transparent btn-lg hideOnStart left" data-dismiss="modal" data-toggle="modal" data-target="#signOutModal">Sign out</button>
+    <button type="button" class="btn btn-transparent btn-lg hideOnSignIn left" data-dismiss="modal" data-toggle="modal" data-target="#signInModal">Sign in</button>
+    <button type="button" class="btn btn-transparent btn-lg hideOnStart left" data-dismiss="modal" data-toggle="modal" data-target="#changePasswordModal">Settings</button>
+
+    <!-- possible dropdown? Not working yet -->
+    <div class="dropdown">
+    <button class="btn btn-transparent btn-lg dropdown-toggle right hideOnStart" type="button" data-toggle="dropdown">Cart <span class="glyphicon glyphicon-shopping-cart"></span>
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu pull-right">
+      <!-- Add header here -->
+      <div class="orders"> </div>
+      <div class="stripe-checkout hideOnStart showAfterLogin">
+        <script src="https://checkout.stripe.com/checkout.js"></script>
+        <button type="button" id="buttonCheckout" class="btn btn-primary">Checkout</button>
+        <div id="confirm-purchase" class="purchaseConfirm hideOnStart showAfterLogin"></div>
+      </div>
+    </ul>
+    </div>
 
     </nav>
 
@@ -155,23 +171,24 @@
     </div>
   </div>
 
-  <div class="alreadyPurchased hideOnStart showAfterLogin">
+<!-- Will this be used in refactor2? This shows purchase history -->
+  <!-- <div class="alreadyPurchased hideOnStart showAfterLogin">
     <button class="purcashed-button" type="submit" name="submit" value="submit">See Purchase History</button>
     <div class="purchase-display"></div>
-  </div>
+  </div> -->
 
-  <div class="cartHas hideOnStart showAfterLogin">
+
+  <!-- To be removed for refactor with nav bar -->
+  <!-- <div class="cartHas hideOnStart showAfterLogin">
     <button class="cartHas-button" type="submit" name="submit" value="submit">View Cart</button>
     <div class="cartHas-display"></div>
-  </div>
+  </div> -->
 
-  <br>
-
-    <div class="stripe-checkout hideOnStart showAfterLogin">
+    <!-- <div class="stripe-checkout hideOnStart showAfterLogin">
       <script src="https://checkout.stripe.com/checkout.js"></script>
       <button type="button" id="buttonCheckout" class="btn btn-primary">Checkout</button>
       <div id="confirm-purchase" class="purchaseConfirm hideOnStart showAfterLogin"></div>
-    </div>
+    </div> -->
 
 
 
@@ -330,6 +347,13 @@
       </form>
     </div>
   </div>
+
+  <script>
+       $(document).ready(function(){
+          $('.dropdown-toggle').dropdown()
+      });
+  </script>
+
 </body>
 
 </html>
