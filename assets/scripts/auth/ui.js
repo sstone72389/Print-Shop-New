@@ -4,12 +4,14 @@ const store = require('../store.js')
 const signUpSuccess = (data) => {
   $('#signUpModal').modal('hide')
   $('input').val('')
+  $('.modal-backdrop').remove()
 }
 
 const signUpFailure = (response) => {
   $('.text-display').text('Error Signing Up')
   $('#signUpModal').modal('hide')
   $('input').val('')
+  $('.modal-backdrop').remove()
 }
 
 // add shows where applicable
@@ -30,6 +32,7 @@ const signInSuccess = (data) => {
   $('.hideOnSignIn').hide()
   $('.hideOnSignInTwo').hide()
   $('#signInModal').modal('hide')
+  $('.modal-backdrop').remove()
   document.getElementById('sign-in').reset()
 
   // store the user object as per belows
@@ -40,6 +43,7 @@ const signInFailure = () => {
   $('.text-display').text('Error Signing In')
   $('#signInModal').modal('hide')
   $('input').val('')
+  $('.modal-backdrop').remove()
 }
 
 const changePasswordSuccess = (data) => {
@@ -48,6 +52,7 @@ const changePasswordSuccess = (data) => {
   // document.getElementById('change-password').reset()
   $('#changePasswordModal').modal('hide')
   $('input').val('')
+  $('.modal-backdrop').remove()
 }
 
 const changePasswordFailure = () => {
@@ -55,6 +60,7 @@ const changePasswordFailure = () => {
   // document.getElementById('change-password').reset()
   $('#changePasswordModal').modal('hide')
   $('input').val('')
+  $('.modal-backdrop').remove()
 }
 
 const signOutSuccess = (data) => {
@@ -85,6 +91,7 @@ const signOutSuccess = (data) => {
   //   $('.change-pwd-error').addClass('hidden')
   // }
   // store the user with a value of null as per below
+  $('.modal-backdrop').remove()
   store.user = null
 }
 
