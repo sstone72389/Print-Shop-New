@@ -1,34 +1,35 @@
+<!-- {{> partial}} -->
 
-  <!-- {{> partial}} -->
+<table class="cart-handlebars" data-id="{{print.id}}">
+  <thead>
+    <tr>
+      <th>Print</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
 
-  <table class="cart-handlebars" data-id="{{print.id}}">
-    <thead>
-      <tr>
-        <th>Print</th>
-        <th>Quantity</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      {{#each prints as |print|}}
+  <tbody>
+    {{#each prints as |print|}}
       <tr>
         <td>{{print.title}}</td>
         <td>
           <form data-id="{{print.id}}" class="update-print-button">
             <fieldset>
-          <input type="number" name="print[quantity]" placeholder={{print.quantity}} min="1" max="10">
-          <button type="submit">edit</button>
-          <button class="remove-print-button"  data-id="{{print.id}}">remove</button>
-        </fieldset>
-        </form>
+              <div class="col-xs-5">
+                <input type="number" class="form-control zoom-control" name="print[quantity]" placeholder= {{print.quantity}} min="1" max="10">
+              </div>
+              <button type="submit">edit</button>
+              <button class="remove-print-button" data-id="{{print.id}}">remove</button>
+            </fieldset>
+          </form>
         </td>
         <!-- <td>
           <button class="remove-print-button"  data-id="{{print.id}}">remove</button>
         </td> -->
         </div>
       </tr>
-      {{/each}}
-    </tbody>
-  </table>
+    {{/each}}
+  </tbody>
+</table>
 
-  <div class="total-cost-display"></div>
+<div class="total-cost-display"></div>

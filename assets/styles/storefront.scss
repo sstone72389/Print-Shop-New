@@ -214,6 +214,12 @@ ul.dropdown-menu.pull-right {
   margin-top: 3rem;
 }
 
+ul.dropdown-menu {
+  background-color: #ffefd1;
+  // margin-top: 3rem;
+  height: auto;
+}
+
 .hideOnStart {
   display: none;
 }
@@ -252,7 +258,6 @@ button {
   border: none;
   border-radius: 5px;
   transition-duration: 0.4s;
-  padding: 10px 20px;
 }
 
 button:hover {
@@ -280,4 +285,21 @@ button[type=submit] {
 
 .padMe {
   padding-top: 8px;
+}
+
+.dropdown-menu {
+  left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
+}
+
+// .btn.btn-transparent {
+//   // margin-bottom: .4em;
+//   font-size: 18px;
+// }
+
+.button.btn.btn-transparent.btn-lg.dropdown-toggle {
+  margin-top: .36em;
+  font-size: 18px;
 }
