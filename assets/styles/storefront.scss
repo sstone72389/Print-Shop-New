@@ -1,5 +1,5 @@
-html,
-body {
+body,
+html {
   background: #FFEFD1;
   color: #BFB39D;
   font-family: 'PT Serif', serif;
@@ -81,7 +81,7 @@ header h1 {
   display: inline-block;
   font-size: 70px;
   margin-top: 10vh;
-  opacity: .9;
+  opacity: 0.9;
   padding: 1rem;
   position: relative;
   z-index: 1;
@@ -96,8 +96,8 @@ h2 {
 }
 
 h4 {
-color: #524c42;
-font-size: 1rem;
+  color: #524c42;
+  font-size: 1rem;
 }
 
 input {
@@ -121,10 +121,11 @@ input {
 .palette {
   height: 40vh;
   right: 0;
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
 
-.alreadyPurchased, .cartHas {
+.alreadyPurchased,
+.cartHas {
   text-align: center;
 }
 
@@ -159,50 +160,51 @@ input {
   max-width: 25vw;
 }
 
-.create-print-message,
-.create-print-failure {
+.create-print-failure,
+.create-print-message {
   position: absolute;
+  color: #ffefd1;
   left: 50%;
   width: 100%;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
-.create-print-message p,
-.create-print-failure p {
+.create-print-failure p,
+.create-print-message p {
+  color: #ffefd1;
   position: relative;
   left: -50%;
   width: 100%;
 }
 
-
-form,
-button {
+button,
+form {
   position: relative;
   z-index: 2;
 }
 
 input {
   outline: none;
-  padding: .2rem 0;
-  margin-right: .7rem;
+  padding: 0.2rem 0;
+  margin-right: 0.7rem;
 }
 
 button:focus {
   outline: 0;
 }
 
-p,
-.total-cost-display,
+.create-print-failure,
 .create-print-message,
-.create-print-failure {
+.total-cost-display,
+p {
   font-family: 'Open Sans', sans-serif;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   color: #524c42;
 }
 
 .total-cost-display {
   font-family: 'Open Sans', sans-serif;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   color: #524c42;
   text-align: center;
 }
@@ -211,7 +213,6 @@ ul.dropdown-menu.pull-right {
   background-color: #ffefd1;
   margin-top: 3rem;
 }
-
 
 .hideOnStart {
   display: none;
@@ -223,7 +224,8 @@ ul.dropdown-menu.pull-right {
 }
 
 .cartHas-display,
-.purchase-display, .purchaseConfirm {
+.purchase-display,
+.purchaseConfirm {
   font-size: 1rem;
   color: #4c443a;
   padding: 6px 0;
@@ -237,7 +239,6 @@ ul.dropdown-menu.pull-right {
   text-align: center;
   font-size: 1.3rem;
 }
-
 // using modal instead for purch confirmation
 // #confirm-purchase {
 //   position: relative;
@@ -259,7 +260,7 @@ button:hover {
 }
 
 button:focus {
-  outline:0;
+  outline: 0;
 }
 
 button[type=submit] {
@@ -269,5 +270,14 @@ button[type=submit] {
 .alertDisp {
   text-align: center;
   color: #524c42;
+}
 
+.print-name {
+  color: #ffefd1;
+  font-size: 16px;
+  padding-top: 0.6rem;
+}
+
+.padMe {
+  padding-top: 8px;
 }
