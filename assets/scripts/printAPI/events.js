@@ -89,6 +89,7 @@ const handleToken = function (token) {
     .then(output => {
       const cost = (output.amount / 100).toString()
       if (output.status === 'succeeded') {
+        $('#purchaseModal').modal('show');
         $('.purchaseConfirm').text('You have successfully paid, the total cost was $' + cost)
         onCreateOrder()
       }
@@ -107,6 +108,7 @@ const handleToken = function (token) {
 // StripeCheckout functions
 const onCheckout = function(ev) {
   if (store.totalCost === undefined || store.totalCost === 0) {
+    $('#purchaseModal').modal('show');
     $('.purchaseConfirm').text('You must put something in the cart before you can purchase it. Put some prints in the cart!')
     return
   } else {

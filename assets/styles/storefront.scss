@@ -91,6 +91,14 @@ h1 {
   font-size: 4rem;
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
+h4 {
+color: #524c42;
+font-size: 1rem;
+}
 
 input {
   font-size: 16px;
@@ -217,6 +225,16 @@ p,
   padding-bottom: 12px;
 }
 
+#confirm-purchase {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+#confirm-purchase {
+  position: relative;
+  min-height: 2.1rem;
+}
+
 button {
   background-color: #668578;
   color: white;
@@ -237,4 +255,10 @@ button:focus {
 
 button[type=submit] {
   margin-top: 10px;
+}
+
+.alertDisp {
+  text-align: center;
+  color: #524c42;
+
 }

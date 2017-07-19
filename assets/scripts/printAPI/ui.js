@@ -7,10 +7,6 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const indexPrintsSuccess = (response) => {
   store.indexOfPrints = response
-  if (response.prints.length === 0) {
-    $('.orders').html("Don't forget to add some prints!")
-    calculateTotalCost()
-  } else {
     const indexPrintsHtml = showPrintsTemplate({
       prints: response.prints
     })
@@ -19,7 +15,6 @@ const indexPrintsSuccess = (response) => {
     $('.update-print-button').on('submit', updatePrint)
     calculateTotalCost()
   }
-}
 
 const calculateTotalCost = (response) => {
   const printArray = store.indexOfPrints.prints

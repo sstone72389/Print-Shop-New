@@ -19,7 +19,7 @@
 
 <body>
 
-    <nav>
+  <nav>
 
     <button type="button" class="btn btn-transparent btn-lg hideOnSignIn left" data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
     <button type="button" class="btn btn-transparent btn-lg hideOnStart left" data-dismiss="modal" data-toggle="modal" data-target="#signOutModal">Sign out</button>
@@ -30,28 +30,30 @@
 
     <!-- possible dropdown? Not working yet -->
     <div class="dropdown">
-    <button class="btn btn-transparent btn-lg dropdown-toggle right hideOnStart" type="button" data-toggle="dropdown">Cart <span class="glyphicon glyphicon-shopping-cart"></span>
+      <button class="btn btn-transparent btn-lg dropdown-toggle right hideOnStart" type="button" data-toggle="dropdown">Cart <span class="glyphicon glyphicon-shopping-cart"></span>
     <span class="caret"></span></button>
-    <ul class="dropdown-menu pull-right">
-      <!-- Add header here -->
-      <div class="orders"> </div>
-      <div class="stripe-checkout hideOnStart showAfterLogin">
-        <script src="https://checkout.stripe.com/checkout.js"></script>
-        <button type="button" id="buttonCheckout" class="btn btn-primary">Checkout</button>
-        <div id="confirm-purchase" class="purchaseConfirm hideOnStart showAfterLogin"></div>
-      </div>
-    </ul>
+      <ul class="dropdown-menu pull-right">
+        <!-- Add header here -->
+        <div class="orders"> </div>
+        <div class="stripe-checkout hideOnStart showAfterLogin">
+          <script src="https://checkout.stripe.com/checkout.js"></script>
+          <button type="button" id="buttonCheckout" class="btn btn-primary">Checkout</button>
+          <!-- <div id="confirm-purchase" class="purchaseConfirm hideOnStart showAfterLogin"></div> -->
+        </div>
+      </ul>
     </div>
 
-    </nav>
+  </nav>
 
   <header>
-    <h1>P R I N T S</h1>
+    <h1>P R I N T - S H O P</h1>
 
     <img class="paintbrush" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/paintbrush.png" />
     <img class="palette" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/palette.png" />
 
     <h2 class="text-display">Welcome. Sign in to get started!</h2>
+
+    <br>
 
   </header>
 
@@ -66,10 +68,9 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Please Sign In</h4>
+          <button type="button alertDisp" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body alertDisp">
           <h2>You Must Sign In to Start Making Purchases</h2>
         </div>
         <div class="modal-footer">
@@ -85,13 +86,13 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Don't forget to sign up!</h4>
+          <h4 class="modal-title">Create account</h4>
         </div>
         <div class="modal-body">
           <form id="sign-up">
             <fieldset>
               <div class="form-group">
-                <input class="form-control zoom-control" name="credentials[email]" type="text" placeholder="create account">
+                <input class="form-control zoom-control" name="credentials[email]" type="text" placeholder="user name">
               </div>
               <div class="form-group">
                 <input class="form-control zoom-control" name="credentials[password]" type="password" placeholder="password">
@@ -117,7 +118,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Don't forget to sign in!</h4>
+          <h4 class="modal-title">Sign in here</h4>
         </div>
         <div class="modal-body">
           <form id="sign-in">
@@ -170,7 +171,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Change Password Here!</h4>
+          <h4 class="modal-title">Change password here</h4>
         </div>
         <div class="modal-body">
           <form id="change-password">
@@ -191,7 +192,7 @@
     </div>
   </div>
 
-<!-- Will this be used in refactor2? This shows purchase history -->
+  <!-- Will this be used in refactor2? This shows purchase history -->
   <!-- <div class="alreadyPurchased hideOnStart showAfterLogin">
     <button class="purcashed-button" type="submit" name="submit" value="submit">See Purchase History</button>
     <div class="purchase-display"></div>
@@ -204,11 +205,33 @@
     <div class="cartHas-display"></div>
   </div> -->
 
-    <!-- <div class="stripe-checkout hideOnStart showAfterLogin">
+  <!-- <div class="stripe-checkout hideOnStart showAfterLogin">
       <script src="https://checkout.stripe.com/checkout.js"></script>
-      <button type="button" id="buttonCheckout" class="btn btn-primary">Checkout</button>
-      <div id="confirm-purchase" class="purchaseConfirm hideOnStart showAfterLogin"></div>
-    </div> -->
+      <button type="button" id="buttonCheckout" class="btn btn-primary">Checkout</button> -->
+
+  <!--Sign in Modal -->
+  <div id="purchaseModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div id="confirm-purchase" class="purchaseConfirm">
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="confirm-purchase" class="purchaseConfirm">
+        <h2 id="hideMe">&nbsp;</h2>
+      </div> -->
+  <!-- </div> -->
 
 
 
@@ -369,9 +392,9 @@
   </div>
 
   <script>
-       $(document).ready(function(){
-          $('.dropdown-toggle').dropdown()
-      });
+    $(document).ready(function() {
+      $('.dropdown-toggle').dropdown()
+    });
   </script>
 
 </body>
