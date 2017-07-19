@@ -203,7 +203,20 @@ p,
 .create-print-failure {
   font-family: 'Open Sans', sans-serif;
   margin-bottom: .5rem;
+  color: #524c42;
 }
+
+.total-cost-display {
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: .5rem;
+  color: #524c42;
+  text-align: center;
+}
+
+ul.dropdown-menu.pull-right {
+  background-color: #ffefd1;
+}
+
 
 .hideOnStart {
   display: none;
