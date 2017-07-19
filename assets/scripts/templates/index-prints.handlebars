@@ -13,11 +13,10 @@
       {{#each prints as |print|}}
       <tr>
         <td>{{print.title}}</td>
-        <td>{{print.quantity}}</td>
         <td>
           <form data-id="{{print.id}}" class="update-print-button">
             <fieldset>
-          <input type="number" name="print[quantity]" value="1" placeholder="1" min="1" max="10">
+          <input type="number" name="print[quantity]" placeholder={{print.quantity}} min="1" max="10">
           <button type="submit">edit</button>
           <button class="remove-print-button"  data-id="{{print.id}}">remove</button>
         </fieldset>
