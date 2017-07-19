@@ -124,12 +124,6 @@ input {
   transition: opacity .2s ease;
 }
 
-@media all and (max-width: 750px) {
-  .palette {
-    opacity: 0;
-  }
-}
-
 .alreadyPurchased, .cartHas {
   text-align: center;
 }
@@ -215,6 +209,7 @@ p,
 
 ul.dropdown-menu.pull-right {
   background-color: #ffefd1;
+  margin-top: 3rem;
 }
 
 

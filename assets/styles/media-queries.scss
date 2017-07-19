@@ -1,0 +1,14 @@
+@media (max-width: 560px) {
+  #responsive {
+    font-size: 35px;
+  }
+
+  ul.dropdown-menu.pull-right {
+    max-width: 100%;
+  }
+}
+@media all and (max-width: 750px) {
+  .palette {
+    opacity: 0;
+  }
+}
