@@ -1,18 +1,20 @@
 Read me for print shop group project!
 
 **Link to deployed app:**
-(https://squadorange.github.io/PrintShopClient/)
+(https://sstone72389.github.io/Print-Shop-New/)
 
 **Link to deployed back-end:**
-(https://secure-chamber-31638.herokuapp.com/
+(https://immense-savannah-73661.herokuapp.com/)
 
 **Link to front-end repo:**
-(https://github.com/SquadOrange/PrintShopClient)
+(https://github.com/sstone72389/Print-Shop-New)
 
 **Link to back-end repo:**
-(https://github.com/SquadOrange/printshopbackend)
+(https://github.com/sstone72389/Print-Shop-New-Back-End)
 
 By Maggie, Catherine, and Spencer!
+
+Refactor by Spencer Stone: In order to allow for a better user interface and experience, A nav bar has been added in order to give the user a better feel for an "e-commerce app." Media queries were added to allow the page to be viewed on various devices. In future refactors, more responsive design must be implemented to allow use on even smaller devices.
 
 Print Shop -- Description:
   Print shop is an online store where you can choose from 9 different prints to order, each of which costs $100.  You can order as many prints as you want.  You can add prints to the cart and then change the number of prints you order from the cart or remove the prints altogether.  Prints are purchased using the third party API stripe, and require only an email address and a valid credit card number. Stripe can only be used in test mode with the test credit card number 4242-4242-4242-4242 and an expiration date in the future.  This allows you to simulate purchasing the prints using stripe and clears the cart.
