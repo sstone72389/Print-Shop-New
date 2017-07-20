@@ -268,8 +268,11 @@ button:focus {
   outline: 0;
 }
 
-button[type=submit] {
-  margin-top: 10px;
+#buttonSignIn,
+#buttonSignUp,
+#buttonPassword,
+#buttonSignOut {
+  background-color: #272b47;
 }
 
 .alertDisp {
@@ -302,4 +305,8 @@ button[type=submit] {
 .button.btn.btn-transparent.btn-lg.dropdown-toggle {
   margin-top: .36em;
   font-size: 18px;
+}
+
+.addMarg {
+  margin: 10px 20px;
 }

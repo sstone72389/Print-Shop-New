@@ -6,7 +6,18 @@
   ul.dropdown-menu.pull-right {
     width: 100%;
   }
+
+  .btn.btn-transparent {
+    // margin-bottom: .4em;
+    font-size: 17px;
+  }
+
+  // .button.btn.btn-transparent.btn-lg.dropdown-toggle {
+  //   margin-top: .36em;
+  //   font-size: 18px;
+  // }
 }
+
 @media all and (max-width: 750px) {
   .palette {
     opacity: 0;

@@ -49,7 +49,7 @@
               <div class="form-group">
                 <input class="form-control zoom-control" name="credentials[password_confirmation]" type="password" placeholder="confirm password">
               </div>
-              <button class="btn btn-primary" type="submit" name="submit">Sign Up!</button>
+              <button id="buttonSignUp" class="btn btn-primary" type="submit" name="submit">Sign Up!</button>
             </fieldset>
           </form>
         </div>
@@ -73,7 +73,7 @@
               <div class="form-group">
                 <input class="form-control zoom-control" name="credentials[password]" type="password" placeholder="password">
               </div>
-              <button class="btn btn-primary" type="submit" name="submit">Sign In!</button>
+              <button id="buttonSignIn" class="btn btn-primary" type="submit" name="submit">Sign In!</button>
             </fieldset>
           </form>
         </div>
@@ -92,7 +92,7 @@
         <div>
           <form id="sign-out">
             <fieldset>
-              <button class="btn btn-primary" type="submit" name="submit">Sign Out!</button>
+              <button id="buttonSignOut" class="btn btn-primary" type="submit" name="submit">Sign Out!</button>
             </fieldset>
           </form>
         </div>
@@ -116,7 +116,7 @@
               <div class="form-group">
                 <input class="form-control zoom-control" name="passwords[new]" type="password" placeholder=" new password">
               </div>
-              <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+              <button id="buttonPassword" class="btn btn-primary" type="submit" name="submit">Submit</button>
             </fieldset>
           </form>
         </div>
@@ -352,7 +352,7 @@
           <div class="padMe padMe form-group col-sm-3">
             <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
           </div>
-          <button class="btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
             <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
           </button>
         </fieldset>
@@ -371,7 +371,7 @@
           <div class="padMe form-group col-sm-3">
             <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
           </div>
-          <button class="btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
             <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
           </button>
           <div class="append"></div>
@@ -391,7 +391,7 @@
           <div class="padMe form-group col-sm-3">
             <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
           </div>
-          <button class="btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
             <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
           </button>
         </fieldset>
@@ -410,7 +410,7 @@
           <div class="padMe form-group col-sm-3">
             <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
           </div>
-          <button class="btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
             <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
           </button>
         </fieldset>
@@ -429,7 +429,7 @@
           <div class="padMe form-group col-sm-3">
             <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
           </div>
-          <button class="btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
             <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
           </button>
         </fieldset>
@@ -448,7 +448,7 @@
           <div class="padMe form-group col-sm-3">
             <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
           </div>
-          <button class="btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
             <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
           </button>
         </fieldset>
@@ -467,7 +467,7 @@
           <div class="padMe form-group col-sm-3">
             <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
           </div>
-          <button class="btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
             <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
           </button>
         </fieldset>
@@ -486,7 +486,7 @@
           <div class="padMe form-group col-sm-3">
             <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
           </div>
-          <button class="btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
             <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
           </button>
         </fieldset>
@@ -505,7 +505,7 @@
           <div class="padMe form-group col-sm-3">
             <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
           </div>
-          <button class="btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
             <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
           </button>
         </fieldset>
