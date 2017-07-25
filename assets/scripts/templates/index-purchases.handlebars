@@ -11,7 +11,7 @@
     <tr>
       <td>{{order.printName}}</td>
       <td>{{order.printQuant}}</td>
-      <td>{{order.createdAt}}</td>
+      <td>{{#formatDate order.createdAt}}{{/formatDate}}</td>
     </tr>
     {{/each}}
   </tbody>
