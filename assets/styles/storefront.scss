@@ -68,6 +68,10 @@ input {
   float: right;
 }
 
+.transformer {
+    transform: translate(-50%, 0);
+}
+
 header {
   position: relative;
   height: 40vh;
@@ -227,6 +231,7 @@ ul.dropdown-menu {
 .text-display {
   font-size: 1.5rem;
   color: #4c443a;
+  z-index: 20;
 }
 
 .cartHas-display,
@@ -294,7 +299,7 @@ button:focus {
   left: 50%;
   right: auto;
   text-align: center;
-  transform: translate(-50%, 0);
+  // transform: translate(-50%, 0);
 }
 
 // .btn.btn-transparent {
