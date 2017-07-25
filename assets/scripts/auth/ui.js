@@ -47,7 +47,7 @@ const signInFailure = () => {
 }
 
 const changePasswordSuccess = (data) => {
-  $('.purch-amt').text('Password Changed Successfully').fadeIn().delay(2000).fadeOut('slow')
+  $('.text-display').text('Password Changed Successfully').fadeIn().delay(2000).fadeOut('slow')
   // $('#change-password').addClass('hidden')
   // document.getElementById('change-password').reset()
   $('#changePasswordModal').modal('hide')
@@ -56,7 +56,7 @@ const changePasswordSuccess = (data) => {
 }
 
 const changePasswordFailure = () => {
-  $('.purch-amt').text('Error Changing Password').fadeIn().delay(2000).fadeOut('slow')
+  $('.text-display').text('Error Changing Password').fadeIn().delay(2000).fadeOut('slow')
   // document.getElementById('change-password').reset()
   $('#changePasswordModal').modal('hide')
   $('input').val('')
