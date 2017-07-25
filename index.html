@@ -49,14 +49,18 @@
           <button type="button" class="btn btn-transparent btn-lg hideOnSignIn left" data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
         </li>
         <li>
-          <button type="button" class="btn btn-transparent btn-lg hideOnStart left" data-dismiss="modal" data-toggle="modal" data-target="#signOutModal">Sign out</button>
+          <button type="button" class="btn btn-transparent btn-lg hideOnSignIn left" data-dismiss="modal" data-toggle="modal" data-target="#signInModal">Sign in</button>
         </li>
         <li>
-          <button type="button" class="btn btn-transparent btn-lg hideOnSignIn left" data-dismiss="modal" data-toggle="modal" data-target="#signInModal">Sign in</button>
+          <button type="button" class="purcashed-button btn btn-transparent btn-lg hideOnStart left" data-dismiss="modal" data-toggle="modal" data-target="#purchHistModal">Purchase history</button>
         </li>
         <li>
           <button type="button" class="btn btn-transparent btn-lg hideOnStart left" data-dismiss="modal" data-toggle="modal" data-target="#changePasswordModal">Settings</button>
         </li>
+        <li>
+          <button type="button" class="btn btn-transparent btn-lg hideOnStart left" data-dismiss="modal" data-toggle="modal" data-target="#signOutModal">Sign out</button>
+        </li>
+
       </ul>
     </div>
 
@@ -89,6 +93,25 @@
         </div>
         <div class="modal-body alertDisp">
           <h2>You Must Sign In to Start Making Purchases</h2>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="purchHistModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button alertDisp" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body alertDisp">
+          <div class="alreadyPurchased hideOnStart showAfterLogin">
+            <div class="purchase-display"></div>
+          </div>
         </div>
         <div class="modal-footer">
         </div>
@@ -209,24 +232,12 @@
     </div>
   </div>
 
-  <!-- Will this be used in refactor2? This shows purchase history -->
+  <!-- shows purchase history -->
   <!-- <div class="alreadyPurchased hideOnStart showAfterLogin">
     <button class="purcashed-button" type="submit" name="submit" value="submit">See Purchase History</button>
     <div class="purchase-display"></div>
   </div> -->
 
-
-  <!-- To be removed for refactor with nav bar -->
-  <!-- <div class="cartHas hideOnStart showAfterLogin">
-    <button class="cartHas-button" type="submit" name="submit" value="submit">View Cart</button>
-    <div class="cartHas-display"></div>
-  </div> -->
-
-
-  <!-- unused due to new cart layout -->
-  <!-- <div class="stripe-checkout hideOnStart showAfterLogin">
-      <script src="https://checkout.stripe.com/checkout.js"></script>
-      <button type="button" id="buttonCheckout" class="btn btn-primary">Checkout</button> -->
 
   <!--Sign in Modal -->
   <div id="purchaseModal" class="modal fade" role="dialog">
