@@ -22,6 +22,11 @@
   // }
 }
 
+.create-print-failure,
+.create-print-message {
+  font-size: .8rem;
+}
+
 @media all and (max-width: 750px) {
   .palette {
     opacity: 0;
