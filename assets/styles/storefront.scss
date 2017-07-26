@@ -1,6 +1,6 @@
 body,
 html {
-  background: #FFEFD1;
+  background: #FFF0F5;
   color: #BFB39D;
   font-family: 'PT Serif', serif;
   font-size: 16px;
@@ -15,7 +15,7 @@ nav {
   width: 100%;
   text-align: center;
   z-index: 1000;
-  background-color: #ffefd1;
+  background-color: #FFF0F5;
   border-bottom: 2px solid #4c4339;
 }
 
@@ -58,7 +58,7 @@ input {
 .modal-footer,
 .modal-header {
   border: 0;
-  background-color: #ffefd1;
+  background-color: #FFF0F5;
   text-align: center;
 }
 
@@ -164,7 +164,7 @@ input {
   background: #ffffff;
   height: 26vw;
   margin-bottom: 1rem;
-  border: 1rem solid #FFEFD1;
+  border: 1rem solid #FFF0F5;
 }
 
 .print-image {
@@ -175,7 +175,7 @@ input {
 .create-print-failure,
 .create-print-message {
   position: absolute;
-  color: #ffefd1;
+  color: #FFF0F5;
   left: 50%;
   width: 100%;
   padding: 0.5rem 0;
@@ -183,7 +183,7 @@ input {
 
 .create-print-failure p,
 .create-print-message p {
-  color: #ffefd1;
+  color: #FFF0F5;
   position: relative;
   left: -50%;
   width: 100%;
@@ -222,12 +222,12 @@ p {
 }
 
 ul.dropdown-menu.pull-right {
-  background-color: #ffefd1;
+  background-color: #FFF0F5;
   margin-top: 3rem;
 }
 
 ul.dropdown-menu {
-  background-color: #ffefd1;
+  background-color: #FFF0F5;
   // margin-top: 3rem;
   height: auto;
 }
@@ -291,7 +291,7 @@ button:focus {
 }
 
 .print-name {
-  color: #ffefd1;
+  color: #FFF0F5;
   font-size: 16px;
   padding-top: 0.6rem;
 }
