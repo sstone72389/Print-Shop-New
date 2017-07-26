@@ -58,6 +58,13 @@ input {
 .modal-footer,
 .modal-header {
   border: 0;
+  background-color: #ffefd1;
+  text-align: center;
+}
+
+.modal-header,
+.modal-footer {
+  border-radius: 10px
 }
 
 .left {
@@ -265,6 +272,7 @@ button {
   border: none;
   border-radius: 5px;
   transition-duration: 0.4s;
+  margin: .3rem;
 }
 
 button:hover {
