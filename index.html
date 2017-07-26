@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Print-Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Serif" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+  <!-- to be used for dummy add btns -->
+  <!-- <div class="padMe padMe form-group col-sm-4">
+    <input class="form-control zoom-control choose-quantity hideOnSignIn showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
+  </div>
+  <button class=" signInFirst btn btn-transparent btn-lg right hideOnSignIn" type="button" data-toggle="modal" data-target="#alertModal">
+  </button> -->
+
+  <nav>
+    <button class=" signInFirst btn btn-transparent btn-lg right hideOnSignIn" type="button" data-toggle="modal" data-target="#alertModal">Cart <span class="glyphicon glyphicon-shopping-cart"></span>
+    <span class="caret"></span>
+    </button>
+
+    <!-- possible dropdown?-->
+    <div class="dropdown">
+      <button class="btn btn-transparent btn-lg dropdown-toggle right hideOnStart" type="button" data-toggle="dropdown">Cart <span class="glyphicon glyphicon-shopping-cart"></span>
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu pull-right">
+        <!-- Add header here -->
+        <div class="orders"> </div>
+        <div class="stripe-checkout hideOnStart showAfterLogin">
+          <script src="https://checkout.stripe.com/checkout.js"></script>
+          <button type="button" id="buttonCheckout" class="btn btn-default">Checkout</button>
+          <!-- <div id="confirm-purchase" class="purchaseConfirm hideOnStart showAfterLogin"></div> -->
+        </div>
+      </ul>
+    </div>
+
+
+    <div class="dropdown right">
+      <button class="btn btn-transparent btn-lg dropdown-toggle" type="button" data-toggle="dropdown">Account
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu transformer">
+        <!-- <h4>Manage Account Here</h4> -->
+        <li>
+          <button type="button" class="btn btn-transparent btn-lg hideOnSignIn left" data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-transparent btn-lg hideOnSignIn left" data-dismiss="modal" data-toggle="modal" data-target="#signInModal">Sign in</button>
+        </li>
+        <li>
+          <button type="button" class="purcashed-button btn btn-transparent btn-lg hideOnStart left" data-dismiss="modal" data-toggle="modal" data-target="#purchHistModal">Purchase history</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-transparent btn-lg hideOnStart left" data-dismiss="modal" data-toggle="modal" data-target="#changePasswordModal">Settings</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-transparent btn-lg hideOnStart left" data-dismiss="modal" data-toggle="modal" data-target="#signOutModal">Sign out</button>
+        </li>
+
+      </ul>
+    </div>
+
+  </nav>
+
+  <header>
+    <h1 id=responsive>P R I N T - S H O P</h1>
+
+    <img class="paintbrush" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/paintbrush.png" />
+    <img class="palette" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/palette.png" />
+
+    <h2 class="text-display">Welcome. Sign in to get started!</h2>
+
+    <br>
+
+  </header>
+
+  <!-- <div class="cart">
+    <button class="cart-button" type="submit" name="submit" value="submit">Check out</button>
+    <div class="cart-display"></div>
+  </div> -->
+
+
+
+  <div id="alertModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button alertDisp" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body alertDisp">
+          <h2>Please sign in to make purchases!</h2>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="purchHistModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button alertDisp" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body alertDisp">
+          <h2>Previous Purchases</h2>
+          <div class="alreadyPurchased hideOnStart showAfterLogin">
+            <div class="purchase-display"></div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="signUpModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create account</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-up">
+            <fieldset>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="credentials[email]" type="text" placeholder="user name">
+              </div>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="credentials[password]" type="password" placeholder="password">
+              </div>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+              </div>
+              <button class="btn btn-default" type="submit" name="submit">Sign Up!</button>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Sign in Modal -->
+  <div id="signInModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign in here</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-in">
+            <fieldset>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="credentials[email]" type="text" placeholder="your username">
+              </div>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="credentials[password]" type="password" placeholder="password">
+              </div>
+              <button class="btn btn-default" type="submit" name="submit">Sign In!</button>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Out Modal -->
+  <div id="signOutModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Are you sure want to sign out?</h4>
+        </div>
+        <div class="modal-body">
+          <form id="sign-out">
+            <fieldset>
+              <button class="btn btn-default" type="submit" name="submit">Yes, sign out!</button>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Change Passwrord Modal -->
+  <div id="changePasswordModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Change password here</h4>
+        </div>
+        <div class="modal-body">
+          <form id="change-password">
+            <fieldset>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="passwords[old]" type="password" placeholder="old password">
+              </div>
+              <div class="form-group">
+                <input class="form-control zoom-control" name="passwords[new]" type="password" placeholder="new password">
+              </div>
+              <button class="btn btn-default" type="submit" name="submit">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- shows purchase history -->
+  <!-- <div class="alreadyPurchased hideOnStart showAfterLogin">
+    <button class="purcashed-button" type="submit" name="submit" value="submit">See Purchase History</button>
+    <div class="purchase-display"></div>
+  </div> -->
+
+
+  <!--Sign in Modal -->
+  <div id="purchaseModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div id="confirm-purchase" class="purchaseConfirm">
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="confirm-purchase" class="purchaseConfirm">
+        <h2 id="hideMe">&nbsp;</h2>
+      </div> -->
+  <!-- </div> -->
+
+
+
+  <div class="store-display">
+    <div class="print-container">
+      <div class="print-image-container">
+        <img class="print-image" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/0.png">
+      </div>
+      <p class="print-name">bento box</p>
+      <!--  Data id should be passed to the cart ID num to reference the object in the prints collection -->
+      <form class="print-form" data-id="0">
+        <fieldset class>
+          <p class="print-name">$100</p>
+          <div class="padMe form-group col-sm-4">
+            <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
+          </div>
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+            <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+          </button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="print-container">
+      <div class="print-image-container">
+        <img class="print-image" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/1.png">
+      </div>
+      <p class="print-name">sushi roll</p>
+      <!--  Data id should be passed to the cart ID num to reference the object in the prints collection -->
+      <form class="print-form" data-id="1">
+        <fieldset>
+          <p class="print-name">$100</p>
+          <div class="padMe form-group col-sm-4">
+            <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
+          </div>
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+            <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+          </button>
+          <div class="append"></div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="print-container">
+      <div class="print-image-container">
+        <img class="print-image" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/2.png">
+      </div>
+      <p class="print-name">lego man</p>
+      <!--  Data id should be passed to the cart ID num to reference the object in the prints collection -->
+      <form class="print-form" data-id="2">
+        <fieldset>
+          <p class="print-name">$100</p>
+          <div class="padMe form-group col-sm-4">
+            <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
+          </div>
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+            <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+          </button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="print-container">
+      <div class="print-image-container">
+        <img class="print-image" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/3.png">
+      </div>
+      <p class="print-name">cactus</p>
+      <!--  Data id should be passed to the cart ID num to reference the object in the prints collection -->
+      <form class="print-form" data-id="3">
+        <fieldset>
+          <p class="print-name">$100</p>
+          <div class="padMe form-group col-sm-4">
+            <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
+          </div>
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+            <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+          </button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="print-container">
+      <div class="print-image-container">
+        <img class="print-image" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/4.png">
+      </div>
+      <p class="print-name">eclair</p>
+      <!--  Data id should be passed to the cart ID num to reference the object in the prints collection -->
+      <form class="print-form" data-id="4">
+        <fieldset>
+          <p class="print-name">$100</p>
+          <div class="padMe form-group col-sm-4">
+            <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
+          </div>
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+            <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+          </button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="print-container">
+      <div class="print-image-container">
+        <img class="print-image" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/5.png">
+      </div>
+      <p class="print-name">sriracha</p>
+      <!--  Data id should be passed to the cart ID num to reference the object in the prints collection -->
+      <form class="print-form" data-id="5">
+        <fieldset>
+          <p class="print-name">$100</p>
+          <div class="padMe form-group col-sm-4">
+            <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
+          </div>
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+            <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+          </button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="print-container">
+      <div class="print-image-container">
+        <img class="print-image" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/6.png">
+      </div>
+      <p class="print-name">terrarium</p>
+      <!--  Data id should be passed to the cart ID num to reference the object in the prints collection -->
+      <form class="print-form" data-id="6">
+        <fieldset>
+          <p class="print-name">$100</p>
+          <div class="padMe form-group col-sm-4">
+            <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
+          </div>
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+            <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+          </button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="print-container">
+      <div class="print-image-container">
+        <img class="print-image" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/7.png">
+      </div>
+      <p class="print-name">pineapple</p>
+      <!--  Data id should be passed to the cart ID num to reference the object in the prints collection -->
+      <form class="print-form" data-id="7">
+        <fieldset>
+          <p class="print-name">$100</p>
+          <div class="padMe form-group col-sm-4">
+            <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
+          </div>
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+            <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+          </button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="print-container">
+      <div class="print-image-container">
+        <img class="print-image" src="https://raw.githubusercontent.com/SquadOrange/PrintShopClient/master/assets/images/8.png">
+      </div>
+      <p class="print-name">platypus</p>
+      <!--  Data id should be passed to the cart ID num to reference the object in the prints collection -->
+      <form class="print-form" data-id="8">
+        <fieldset>
+          <p class="print-name">$100</p>
+          <div class="padMe form-group col-sm-4">
+            <input class="form-control zoom-control choose-quantity hideOnStart showAfterLogin" type="number" name="cart[quantity]" min="1" max="10">
+          </div>
+          <button class="addMarg btn btn-default btn-sm hideOnStart showAfterLogin" type="submit" name="submit" value="submit">
+            <span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart
+          </button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <!-- <script>
+    $(document).ready(function() {
+      $('.dropdown-toggle').dropdown()
+    });
+  </script> -->
+
+</body>
+
+</html>
